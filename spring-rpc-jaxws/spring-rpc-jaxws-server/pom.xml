@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.jaybill.spring</groupId>
+    <artifactId>spring-rpc-jaxws</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>spring-rpc-jaxws-server</artifactId>
+  <packaging>war</packaging>
+   <repositories>
+    <repository>
+      <id>java.net</id>
+      <url>http://download.java.net/maven/2</url>
+    </repository>
+  </repositories>
+	<!-- 定义版本号 -->
+   <properties>
+	<spring.version>4.3.8.RELEASE</spring.version>
+   </properties>
+  <dependencies>
+	<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-test</artifactId>  
+		    <version>${spring.version}</version>  
+		    <scope>test</scope>  
+		</dependency> 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+    <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+    </dependency>
+	<!-- Spring framework -->
+	
+    <!-- JAX-WS -->
+	<dependency>
+	  	<groupId>com.sun.xml.ws</groupId>
+	        <artifactId>jaxws-rt</artifactId>
+	        <version>2.2.3</version>
+	</dependency>
+ 	<!-- Library from java.net, integrate Spring with JAX-WS -->
+	<dependency>
+		<groupId>org.jvnet.jax-ws-commons.spring</groupId>
+		<artifactId>jaxws-spring</artifactId>
+		<version>1.8</version>
+		<exclusions>
+		  <exclusion>
+           		<groupId>org.springframework</groupId>
+      			<artifactId>spring-core</artifactId>
+        	  </exclusion>
+        	  <exclusion>
+           		<groupId>org.springframework</groupId>
+      			<artifactId>spring-context</artifactId>
+        	  </exclusion>
+        	  <exclusion>
+           		<groupId>com.sun.xml.stream.buffer</groupId>
+      			<artifactId>streambuffer</artifactId>
+        	  </exclusion>
+        	  <exclusion>
+           		<groupId>org.jvnet.staxex</groupId>
+      			<artifactId>stax-ex</artifactId>
+        	  </exclusion>
+		</exclusions>
+	</dependency>
+  </dependencies>
+</project>
